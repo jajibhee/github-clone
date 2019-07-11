@@ -1,13 +1,19 @@
 import React from 'react'
 import FileListItem from './FileListItem';
+import PropTypes from 'prop-types';
 
 const FileList = ({ files }) => {
   return (
-    <div>
-      <p style={{ padding: '1rem' }}>{files.map(file => file.id)}</p>
-      <div>{files.map(file => file.name)}</div>
+    <div className="file-list">
+
+      {files.map(file =>
+        <FileListItem key={file.id} commit={file.latestCommit} file={file} />
+      )}
     </div>
   )
 }
 
+FileList.propTypes = {
+  files: PropTypes.array.isRequired,
+}
 export default FileList;
