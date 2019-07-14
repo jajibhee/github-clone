@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 
-const FileName = ({ name }) => {
+function FileName({ name }) {
   return (
-    <div>
-      <p>{name}</p>
-    </div>
+    <Fragment>
+      {name}
+    </Fragment>
   )
 }
 

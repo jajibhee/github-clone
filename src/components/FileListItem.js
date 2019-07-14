@@ -1,22 +1,18 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import FileName from './FileName'
-import Commit from './Commit'
-import Time from './Time'
+import React, { Fragment } from 'react'
+import FileName from './FileName';
+import Time from './Time';
+import Commit from './Commit';
+import FileIcon from './FileIcon';
 
 
-const FileListItem = ({ file, commit }) => {
+function FileListItem({ file, commit }) {
   return (
     <div className="file">
-      <FileName name={file.type} />
-      <Commit message={commit.message} />
-      <Time time={file.name} />
+      <FileName name={file.name} /> <FileIcon />
+      <Time time={file.type} />
+      <Commit commit={commit.message} />
     </div>
   )
 }
 
-FileListItem.propTypes = {
-  file: PropTypes.object.isRequired
-}
-export default FileListItem;
-
+export default FileListItem

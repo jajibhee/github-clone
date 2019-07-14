@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Commit = ({ message }) => {
+function Commit({ commit }) {
   return (
     <div>
-      <p>{message}</p>
+      {commit}
     </div>
   )
 }
